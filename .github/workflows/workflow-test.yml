@@ -1,0 +1,16 @@
+name: first-workflow
+on: [push, workflow_dispatch]
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: clone the project
+        uses: actions/checkout@v6
+      - name: install deps
+        run: npm ci
+      - name: lint the project
+        run: npm lint
+      - name: test the project
+        run: npm test
+      - name: build the project
+        run: "echo project building..."
