@@ -29,4 +29,4 @@ jobs:
         run: npm ci
       - name: deploy the project
         run: echo "Project Deploying..."
-    needs: build
+    needs: test
