@@ -9,8 +9,8 @@ jobs:
       - name: install deps
         run: npm ci
       - name: lint the project
-        run: npm lint
+        run: npm run lint
       - name: test the project
-        run: npm test
+        run: npm run test
       - name: build the project
-        run: "echo project building..."
+        run: eval "$(npm run dev) Project building"
