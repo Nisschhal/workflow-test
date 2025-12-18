@@ -1,13 +1,11 @@
-import { defineConfig } from 'vite';
-import react from '@vitejs/plugin-react';
-import eslint from 'vite-plugin-eslint';
+import { defineConfig } from "vite"
+import react from "@vitejs/plugin-react"
 
-// https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [react(), eslint()],
+  plugins: [react()],
   test: {
-    globals: true,
-    environment: 'jsdom',
-    setupFiles: './src/test/setup.js',
+    environment: "jsdom",
+    globals: true, // allows describe/it/expect without imports
+    setupFiles: "./src/test/setup.js", // <-- points to the file above
   },
-});
+})
