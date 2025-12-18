@@ -1,0 +1,30 @@
+name: "Multiple Jobs"
+on: [push, workflow_dispatch]
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: get the code
+        uses: actions/checkout@v6
+      - name: install deps
+        run: npm ci
+      - name: linting project
+        run: npm run lint
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: get the code
+        uses: actions/checkout@v6
+      - name: install deps
+        run: npm ci
+      - name: testing project
+        run: npm run test
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: get the code
+        uses: actions/checkout@v6
+      - name: install deps
+        run: npm ci
+      - name: deploy the project
+        run: echo "Project Deploying..."

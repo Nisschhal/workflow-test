@@ -13,4 +13,4 @@ jobs:
       - name: test the project
         run: npm run test
       - name: build the project
-        run: eval "$(npm run dev) Project building"
+        run: echo "Project Deploying..."
