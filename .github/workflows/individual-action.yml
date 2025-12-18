@@ -19,6 +19,7 @@ jobs:
         run: npm ci
       - name: testing project
         run: npm run test
+    needs: lint
   build:
     runs-on: ubuntu-latest
     steps:
@@ -28,3 +29,4 @@ jobs:
         run: npm ci
       - name: deploy the project
         run: echo "Project Deploying..."
+    needs: build
